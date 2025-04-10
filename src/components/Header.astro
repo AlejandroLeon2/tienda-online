@@ -3,21 +3,25 @@ import logoTienda from '../assets/icons8-hg-64.svg';
 ---
 
 <div class="bg-yellow-400">
-  <header class="flex items-center justify-between p-4 mx-8">
-    <div>
-      <img src={logoTienda.src} alt="Logo Tienda" class="h-10 w-10"/>
-    </div>
-    <div class="flex-grow mx-4">
-      <input class="w-full px-4 py-2 rounded-full bg-white" placeholder="¿Qué estás buscando?" type="text"/>
-    </div>
-    <div class="flex items-center gap-4">
-      <button class="flex items-center px-4 py-2 gap-2">
+  <header class="flex items-center justify-between p-4 mx-1 ">
+    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" xml:space="preserve"><path fill="#282D33" d="M113.766 91.809h-4V30.645c0-.713-.568-1.293-1.266-1.293H19.495c-.696 0-1.263.58-1.263 1.293v61.164h-4V30.645c0-2.918 2.361-5.293 5.263-5.293H108.5c2.904 0 5.266 2.375 5.266 5.293v61.164z"/><path fill="#282D33" d="M105.084 84.652H22.916V34.409h22.742v4H26.916v42.243h74.168V38.409H81.83v-4h23.254zM118.563 102.648H9.435c-3.712 0-8.146-3.261-8.639-3.632l-.796-.6v-8.914h128v8.914l-.797.601c-.492.372-4.93 3.631-8.64 3.631zM4 96.38c1.574 1.04 3.924 2.269 5.435 2.269h109.128c1.633 0 4.051-1.36 5.438-2.271v-2.875H4v2.877z"/><g><path fill="#282D33" d="m64.001 77.178-1.305-1.123C60.979 74.576 45.91 61.329 45.91 51.714c0-10.059 8.116-18.242 18.092-18.242 9.973 0 18.086 8.184 18.086 18.242 0 9.615-15.064 22.862-16.781 24.341l-1.306 1.123zm0-39.706c-7.77 0-14.092 6.389-14.092 14.242 0 6.01 9.209 15.679 14.092 20.147 4.881-4.469 14.086-14.139 14.086-20.147.001-7.854-6.317-14.242-14.086-14.242z"/><path fill="#282D33" d="M64.001 60.834c-4.991 0-9.052-4.091-9.052-9.118s4.061-9.118 9.052-9.118 9.053 4.091 9.053 9.118-4.062 9.118-9.053 9.118zm0-14.236c-2.786 0-5.052 2.296-5.052 5.118s2.266 5.118 5.052 5.118 5.053-2.296 5.053-5.118-2.267-5.118-5.053-5.118z"/></g></svg>
+    <!-- <img src={logoTienda.src} alt="Logo Tienda" class="w-10 h-10 gap-4 cursor-pointer"/> -->
+    <form class="flex-grow mx-4 relative" action="">
+      <input id="search-input" class="w-full px-4 py-2 border border-black rounded-full bg-white placeholder-white md:placeholder-gray-500" placeholder="¿Qué estás buscando?" type="text" />
+      <button id="search-button" class="flex items-center justify-center absolute top-0 right-0 h-full w-10 bg-black rounded-full text-white hover:bg-yellow-900 duration-500" type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </svg>        
+      </button>
+    </form>
+    <div class="flex items-centercursor-pointer gap-1 sm:gap-4">
+      <button class="flex items-center  py-2 gap-2 cursor-pointer hover:scale-105 duration-400">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
           </svg>
         <p class="hidden md:block font-bold">Mi Cuenta</p>
       </button>
-      <button>
+      <button class="flex items-center  py-2 gap-2 cursor-pointer hover:scale-105 duration-400">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
           </svg>
@@ -46,7 +50,7 @@ import logoTienda from '../assets/icons8-hg-64.svg';
       </a>
     </div>
   </nav>
-  <nav class="hidden sm:flex sm:justify-center sm:gap-8 sm:pb-4" id="menu-desktop">
+  <nav class="hidden sm:flex sm:justify-center sm:gap-16 sm:pb-4" id="menu-desktop">
     <a class="font-semibold text-black hover:text-gray-600" href="#">
       Computadoras
     </a>
