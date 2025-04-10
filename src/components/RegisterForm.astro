@@ -1,0 +1,81 @@
+---
+import Boton from "../components/Boton.astro";
+---
+
+<div
+  class="bg-gray-100 w-full h-full min-h-screen md:col-span-2 rounded-2xl border flex flex-col justify-center items-center"
+>
+  <h2 class="text-[1.6rem] my-2 text-center w-[320px]">
+    Iniciar sesion o registrate para comprar
+  </h2>
+  <form action="" class="flex flex-col justify-center md:w-[350px]">
+    <label class="my-1 text-[1.2rem]" for="email">Correo</label>
+    <input
+      class="mx-auto rounded-sm bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px]"
+      type="text"
+      name="email"
+      id="emailRegister"
+      placeholder="Ingresa un correo"
+    />
+    <label class="my-1 text-[1.2rem]" for="name">Nombre</label>
+    <input
+      class="mx-auto rounded-sm bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px]"
+      type="text"
+      name="name"
+      id="nameRegister"
+      placeholder="Ingresa un nombre"
+    />
+    <label class="my-1 text-[1.2rem]" for="apellido">Apellidos</label>
+    <input
+      class="mx-auto rounded-sm bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px]"
+      type="text"
+      name="apellido"
+      id="apellidoRegister"
+      placeholder="Ingresa apellidos"
+    />
+    <label class="my-1 text-[1.2rem]" for="document">Tipo de documento</label>
+    <select
+      class="mx-auto border w-[190px] text-[0.833rem] my-2"
+      name="document"
+      id="documentRegistro"
+    >
+      <option value="">Seleccionar</option>
+      <option value="dni">Dni</option>
+      <option value="pasaporte">Pasaporte</option>
+      <option value="carnet_extrangeria">Carnet de extrangeria</option>
+    </select>
+    <label class="my-1 text-[1.2rem]" for="number">Celular</label>
+    <input
+      class="mx-auto rounded-sm bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px]"
+      type="text"
+      name="number"
+      id="numberRegister"
+      placeholder="Ingresa un numero"
+    />
+    <label class="my-1 text-[1.2rem]" for="password">Contraseña</label>
+    <input
+      class="mx-auto rounded-sm bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px]"
+      type="text"
+      name="password"
+      id="passwordRegister"
+      placeholder="Ingresa una contraseña"
+    />
+    <label class="my-1 text-[1.2rem]" for="passwordConfirm">Contraseña</label>
+    <input
+      class="mx-auto rounded-sm bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px]"
+      type="text"
+      name="passwordConfirm"
+      id="passwordConfirmRegister"
+      placeholder="Confirmacion de contraseña"
+    />
+    <Boton
+      text="Registrate"
+      color="bg-amber-400"
+      hover="hover:bg-amber-500"
+      tipo="submit"
+    />
+    <p class="text-[0.833rem] my-1 text-center">
+      ¿Ya tienes cuenta? <a class="underline" href="#">Inicia sesion</a>
+    </p>
+  </form>
+</div>

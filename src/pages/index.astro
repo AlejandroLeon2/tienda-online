@@ -1,16 +1,67 @@
 ---
-
-import Layout from '../layouts/Layout.astro';
-import CardProducto from '../components/CardProducto.astro';
-import VerProducto from '../components/VerProducto.astro';
-import Modal_R_L from '../components/Modal_R_L.astro';
-import CartList from '../components/CardList.astro';
-import Footer from '../components/Footer.astro';
-import Categorias from '../components/Categorias.astro';
-import Header from '../components/Header.astro';
-
+import Layout from "../layouts/Layout.astro";
+import CardProducto from "../components/CardProducto.astro";
+import VerProducto from "../components/VerProducto.astro";
+import LoginForm from "../components/LoginForm.astro";
+import RegisterForm from "../components/RegisterForm.astro";
+import CartList from "../components/CardList.astro";
+import Footer from "../components/Footer.astro";
+import Categorias from "../components/Categorias.astro";
+import Header from "../components/Header.astro";
+import CardCatgoria from "../components/CardCatgoria.astro";
 ---
 
 <Layout>
+  <section>
+    <CartList
+      nombre="Audifonos max trubo master max max"
+      descripcion="hola cmo es maria yo bien y ti la turbo master tuu ultra white te gusta bracking bad "
+      precio="12345"
+      codigo="1223"
+      imgProducto="/src/assets/nice.png"
+    />
+  </section>
+  <section class="hidden" id="cardCategoria">
+    <CardCatgoria
+      categoria="Audifonos"
+      fotoBanner="/src/assets/bannerAudifonos.webp"
+      foto1="/src/assets/nice.png"
+      foto2="/src/assets/nice.png"
+      foto3="/src/assets/nice.png"
+      foto4="/src/assets/nice.png"
+      text1="On Ear"
+      text2="In Ear"
+      text3="True Wireless"
+      text4="Anulacion de ruido"
+    />
+  </section>
+  <div class="hidden">
+    <LoginForm />
+  </div>
+  <section
+    class="hidden grid grid-cols-1 md:grid-cols-3 gap-4"
+    id="pageRegister"
+  >
+    <RegisterForm />
 
+    <aside
+      class="col-span-1 md:col-start-3 my-4 md:my-0 bg-gray-100 h-[400px] w-full border rounded-2xl place-items-center"
+    >
+      <h2 class="my-4 text-[1.5rem] mx-[40px] text-center">
+        Beneficios de Tec.com
+      </h2>
+      <div class="flex justify-center items-center mx-2">
+        <img class="mx-4" src="/src/assets/campana.svg" alt="campana" />
+        <p class="text-[0.833rem]">
+          Recibe notificaciones en tiempo real de tus pedidos
+        </p>
+      </div>
+      <div class="flex justify-center items-center mx-2">
+        <img class="mx-1" src="/src/assets/regalo.svg" alt="Imagen de regalo" />
+        <p class="text-[0.833rem]">
+          Recibe notificaciones en tiempo real de tus pedidos
+        </p>
+      </div>
+    </aside>
+  </section>
 </Layout>
