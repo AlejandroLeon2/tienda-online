@@ -1,0 +1,79 @@
+---
+const { nombre, descripcion, precio, codigo, imgProducto } = Astro.props;
+---
+
+<li
+  class="producto-carrito rounded border border-black dark:border-white mr-1 my-1 bg-white dark:bg-[#272829] w-[280px] h-[90px] grid grid-cols-3"
+  data-codigo={codigo}
+>
+  <img
+    class="rounded-l col-span-1 w-full h-auto overflow-hidden"
+    src={imgProducto}
+    alt={nombre}
+  />
+  <section class="col-span-2 mt-1">
+    <div class="flex justify-around">
+      <h4 class="text-[0.833rem] w-[180px] leading-[13px] overflow-hidden ml-2">
+        {nombre}
+      </h4>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-trash2-icon lucide-trash-2 cursor-pointer mx-1 hover:scale-105 hover:text-red-500 active:scale-95 active:text-red-600"
+        ><path d="M3 6h18"></path><path
+          d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path
+          d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path><line
+          x1="10"
+          x2="10"
+          y1="11"
+          y2="17"></line><line x1="14" x2="14" y1="11" y2="17"></line></svg
+      >
+    </div>
+    <p
+      class="ml-2 overflow-hidden text-[0.694rem] w-[150px] h-[25px] leading-[13px] text-gray-600 dark:text-gray-400"
+    >
+      {descripcion}
+    </p>
+    <div
+      class="flex items-center justify-around h-[20px] mt-1.5 text-[0.833rem]"
+    >
+      <p class="text-red-600 font-bold text-[0.833rem]">
+        S/ <span>{precio}</span>
+      </p>
+      <div class="w-[66px] flex items-center">
+        <button
+          type="button"
+          aria-label="Aumentar cantidad"
+          class="minBtn w-[18px] h-[20px] border dark:border-white dark:border-r-black bg-gray-200 dark:bg-white dark:text-black rounded-l hover:scale-105 active:scale-95"
+          >-</button
+        >
+        <input
+          class="inputCantidad w-[30px] h-[20px] border text-center text-black bg-white dark:border-white"
+          value="1"
+          min="1"
+          max="20"
+          type="number"
+        />
+
+        <button
+          type="button"
+          aria-label="Disminuir cantidad"
+          class="maxBtn w-[18px] h-[20px] border dark:border-white dark:border-l-black bg-gray-200 dark:bg-white dark:text-black rounded-r hover:scale-105 active:scale-95"
+          >+</button
+        >
+      </div>
+    </div>
+  </section>
+</li>
+<style>
+  input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+  }
+</style>

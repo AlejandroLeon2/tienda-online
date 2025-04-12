@@ -1,0 +1,35 @@
+---
+import Boton from "../components/Boton.astro";
+const { image, marca, titulo, precio, codigo } = Astro.props;
+---
+
+<div
+  class="w-[150px] md:w-[180px] h-[250px] md:h-[300px] my-1 bg-gray-200 dark:bg-gray-400 shadow-xl shadow-black/20 dark:shadow-white/20 border-2 dark:border-white rounded flex flex-col justify-center items-center hover:scale-105"
+>
+  <img
+    class="w-full h-[136px] md:h-[180px] overflow-hidden border-t"
+    src={image}
+    alt={titulo}
+  />
+  <p
+    class="mr-[100px] md:mr-[125px] font-semibold text-blue-700 h-[16px] text-[0.833rem] my-1"
+  >
+    {marca}
+  </p>
+  <h4
+    class="overflow-hidden text-[1rem] mx-1.5 md:mx-3 leading-[15px] h-[32px]"
+  >
+    {titulo}
+  </h4>
+  <p class="h-[13px] my-1 font-bold text-red-700 text-[0.833rem]">
+    S/ <span>{precio}</span>
+  </p>
+  <Boton
+    text="Agregar al carrito"
+    color="bg-amber-400"
+    hoverColor="hover:bg-amber-500"
+    tipo="button"
+    clasAdd="añadir-Carrito"
+    codigo={codigo}
+  />
+</div>

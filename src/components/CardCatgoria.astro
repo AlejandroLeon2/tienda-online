@@ -1,0 +1,58 @@
+---
+const {
+  categoria,
+  fotoBanner,
+  foto1,
+  foto2,
+  foto3,
+  foto4,
+  text1,
+  text2,
+  text3,
+  text4,
+} = Astro.props;
+---
+
+<section
+  class="bg-gray-100 dark:bg-gray-500 shadow-xl shadow-white/20 border flex flex-col justify-center rounded-2xl w-[320px] h-[358px]"
+>
+  <div class="flex justify-around my-2">
+    <h4>{categoria}</h4>
+    <a class="hover:underline" href="#">Ver todo</a>
+  </div>
+  <img class="" src={fotoBanner} alt="Banner Publicitario" />
+  <section class="grid grid-cols-4 place-items-center">
+    <div class="col-span-1 w-[78px] h-auto my-1">
+      <img class="rounded hover:scale-105" src={foto1} alt={text1} />
+      <p
+        class="text-[0.833rem] mx-1 overflow-hidden h-8 leading-[12px] my-1 text-center"
+      >
+        {text1}
+      </p>
+    </div>
+    <div class="col-span-1 w-[78px] h-auto my-1">
+      <img class="rounded hover:scale-105" src={foto2} alt={text2} />
+      <p
+        class="text-[0.833rem] mx-1 overflow-hidden h-8 leading-[12px] my-1 text-center"
+      >
+        {text2}
+      </p>
+    </div>
+    <div class="col-span-1 w-[78px] h-auto my-1">
+      <img class="rounded hover:scale-105" src={foto3} alt={text3} />
+      <p
+        class="text-[0.833rem] mx-1 overflow-hidden h-8 leading-[12px] my-1 text-center"
+      >
+        {text3}
+      </p>
+    </div>
+    <div class="col-span-1 w-[78px] h-auto my-1">
+      <img class="rounded hover:scale-105" src={foto4} alt={text4} />
+      <p
+        class="text-[0.833rem] mx-1 overflow-hidden h-8 leading-[12px] my-1 text-center"
+      >
+        {text4}
+      </p>
+    </div>
+  </section>
+</section>

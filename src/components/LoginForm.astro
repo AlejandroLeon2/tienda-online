@@ -1,0 +1,45 @@
+---
+import Boton from "../components/Boton.astro";
+---
+
+<div
+  class="w-[320px] h-[380px] border text-center shadow-2xl dark:shadow-white/30 bg-gray-100 dark:bg-gray-500 flex flex-col items-center justify-center rounded-sm"
+>
+  <h2 class="text-[1.9rem] leading-8 font-sans margin m-4">
+    Inicia seccion para comprar
+  </h2>
+  <form action="" class="flex flex-col items-center w-[300px]">
+    <label class="text-[1rem] mr-[82px]" for="email">Correo electronico</label>
+    <input
+      class="rounded-sm dark:text-black font-semibold bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px]"
+      type="email"
+      name="email"
+      id="emailLogin"
+      placeholder="Alejandroleon@gmail.com"
+      minlength="6"
+      maxlength="45"
+      required
+    />
+
+    <label class="text-[1rem] mr-[130px]" for="password">Contraseña</label>
+    <input
+      class="rounded-sm font-semibold dark:text-black bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px]"
+      type="password"
+      name="password"
+      id="passwordLogin"
+      placeholder="Alejandro82@"
+      minlength="6"
+      maxlength="45"
+      required
+    />
+    <Boton
+      text="Ingresar"
+      color="bg-amber-400"
+      hoverColor="hover:bg-amber-500"
+      tipo="submit"
+    />
+    <p class="text-[0.833rem] my-1">
+      ¿Aun no tienes cuenta? <a class="underline" href="#">Registrarte</a>
+    </p>
+  </form>
+</div>

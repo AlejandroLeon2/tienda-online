@@ -1,0 +1,11 @@
+---
+const { text, color, hoverColor, tipo, clasAdd, codigo } = Astro.props;
+---
+
+<button
+  data-codigo={codigo}
+  type={tipo}
+  class={`${color} ${hoverColor} ${clasAdd}   px-2 py-0.5 text-[0.833rem] hover:scale-105 active:scale-95 border-b-[0.150rem] border-r-[0.2rem] border rounded my-1 mx-auto font-semibold text-black `}
+>
+  {text}
+</button>
