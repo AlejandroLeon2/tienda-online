@@ -3,39 +3,47 @@ import Boton from "../components/Boton.astro";
 ---
 
 <div
-  class="bg-gray-100 w-full h-full min-h-screen md:col-span-2 rounded-2xl border flex flex-col justify-center items-center"
+  class="bg-gray-100 dark:bg-[#4f6f9f] w-full h-full min-h-screen md:col-span-2 rounded-2xl border flex flex-col justify-center items-center"
 >
-  <h2 class="text-[1.6rem] my-2 text-center w-[320px]">
+  <h2 class="text-[1.5rem] font-semibold my-2 mx-5 text-center">
     Iniciar sesion o registrate para comprar
   </h2>
-  <form action="" class="flex flex-col justify-center md:w-[350px]">
-    <label class="my-1 text-[1.2rem]" for="email">Correo</label>
-    <input
-      class="mx-auto rounded-sm bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px]"
-      type="text"
-      name="email"
-      id="emailRegister"
-      placeholder="Ingresa un correo"
-    />
-    <label class="my-1 text-[1.2rem]" for="name">Nombre</label>
-    <input
-      class="mx-auto rounded-sm bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px]"
-      type="text"
-      name="name"
-      id="nameRegister"
-      placeholder="Ingresa un nombre"
-    />
-    <label class="my-1 text-[1.2rem]" for="apellido">Apellidos</label>
-    <input
-      class="mx-auto rounded-sm bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px]"
-      type="text"
-      name="apellido"
-      id="apellidoRegister"
-      placeholder="Ingresa apellidos"
-    />
-    <label class="my-1 text-[1.2rem]" for="document">Tipo de documento</label>
+  <form action="" class="flex flex-col justify-center md:w-[420px]">
+    <fieldset class="grid grid-cols-1 md:grid-cols-2">
+      <legend class="">Información Personal</legend>
+      <input
+        class="rounded-sm text-black bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px] md:w-[190px]"
+        type="text"
+        name="name"
+        id="nameRegister"
+        placeholder="Ingresa un nombre"
+      />
+
+      <input
+        class="rounded-sm text-black bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px] md:w-[190px]"
+        type="text"
+        name="apellido"
+        id="apellidoRegister"
+        placeholder="Ingresa apellidos"
+      />
+      <input
+        class="rounded-sm text-black bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px] md:w-[190px]"
+        type="email"
+        name="email"
+        id="emailRegister"
+        placeholder="Ingresa un correo"
+      />
+      <input
+        class="rounded-sm text-black bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px] md:w-[190px]"
+        type="tel"
+        name="number"
+        id="numberRegister"
+        placeholder="Ingresa un numero"
+      />
+    </fieldset>
+
     <select
-      class="mx-auto border w-[190px] text-[0.833rem] my-2"
+      class="border text-black w-[190px] text-[0.833rem] my-2 bg-white"
       name="document"
       id="documentRegistro"
     >
@@ -44,30 +52,25 @@ import Boton from "../components/Boton.astro";
       <option value="pasaporte">Pasaporte</option>
       <option value="carnet_extrangeria">Carnet de extrangeria</option>
     </select>
-    <label class="my-1 text-[1.2rem]" for="number">Celular</label>
-    <input
-      class="mx-auto rounded-sm bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px]"
-      type="text"
-      name="number"
-      id="numberRegister"
-      placeholder="Ingresa un numero"
-    />
-    <label class="my-1 text-[1.2rem]" for="password">Contraseña</label>
-    <input
-      class="mx-auto rounded-sm bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px]"
-      type="text"
-      name="password"
-      id="passwordRegister"
-      placeholder="Ingresa una contraseña"
-    />
-    <label class="my-1 text-[1.2rem]" for="passwordConfirm">Contraseña</label>
-    <input
-      class="mx-auto rounded-sm bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px]"
-      type="text"
-      name="passwordConfirm"
-      id="passwordConfirmRegister"
-      placeholder="Confirmacion de contraseña"
-    />
+
+    <fieldset class="grid grid-cols-1 md:grid-cols-2">
+      <legend>Contraseña</legend>
+      <input
+        class="rounded-sm text-black bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px] md:w-[190px]"
+        type="password"
+        name="password"
+        id="passwordRegister"
+        placeholder="Ingresa una contraseña"
+      />
+
+      <input
+        class="rounded-sm text-black bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px] md:w-[190px]"
+        type="password"
+        name="passwordConfirm"
+        id="passwordConfirmRegister"
+        placeholder="Confirmacion de contraseña"
+      />
+    </fieldset>
     <Boton
       text="Registrate"
       color="bg-amber-400"

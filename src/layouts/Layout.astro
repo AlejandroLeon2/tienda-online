@@ -1,5 +1,6 @@
 ---
-
+import "../styles/global.css";
+import "../script/main.js";
 ---
 
 <!doctype html>
@@ -9,11 +10,10 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="../../src/styles/global.css" />
     <title>Astro Basics</title>
   </head>
   <body
-    class="flex justify-center items-center font-mono text-[1rem] text-black dark:text-white"
+    class="font-sans text-[1rem] dark:bg-[#272829] text-black dark:text-white"
   >
     <slot />
   </body>

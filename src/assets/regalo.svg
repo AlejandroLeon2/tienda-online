@@ -44,8 +44,8 @@
               y2="36.989"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#6A7682"></stop>
-              <stop offset="1" stop-color="#21282E"></stop>
+              <stop stop-color="#000"></stop>
+              <stop offset="1" stop-color="#000"></stop>
             </linearGradient>
             <linearGradient
               id="paint2"
@@ -55,8 +55,8 @@
               y2="26.989"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#6A7682"></stop>
-              <stop offset="1" stop-color="#21282E"></stop>
+              <stop stop-color="#000"></stop>
+              <stop offset="1" stop-color="#000"></stop>
             </linearGradient>
             <linearGradient
               id="paint3"
@@ -66,8 +66,8 @@
               y2="36.989"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#6A7682"></stop>
-              <stop offset="1" stop-color="#21282E"></stop>
+              <stop stop-color="#000"></stop>
+              <stop offset="1" stop-color="#000"></stop>
             </linearGradient>
             <linearGradient
               id="paint4"
@@ -77,8 +77,8 @@
               y2="17.989"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#6A7682"></stop>
-              <stop offset="1" stop-color="#21282E"></stop>
+              <stop stop-color="#000"></stop>
+              <stop offset="1" stop-color="#000"></stop>
             </linearGradient>
             <linearGradient
               id="paint5"
@@ -88,8 +88,8 @@
               y2="17.989"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#6A7682"></stop>
-              <stop offset="1" stop-color="#21282E"></stop>
+              <stop stop-color="#000"></stop>
+              <stop offset="1" stop-color="#000"></stop>
             </linearGradient>
           </defs>
         </svg>

@@ -1,9 +1,114 @@
 ---
-
+import CardList from "./CardList.astro";
+import Boton from "./Boton.astro";
 ---
-<section>
-    <h4>Tu carrito</h4>
-    <ul id="listProductos">
 
-    </ul>
+<section
+  class="bg-gray-300 dark:bg-gray-600 w-[300px] flex fixed right-0 flex-col items-end"
+>
+  <div class="flex justify-between items-center w-full">
+    <img class="w-[50px] dark: invert" src="./src/assets/logo.svg" alt="" />
+    <h3 class="text-left text-[1.5rem] font-bold">Tu carrito</h3>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-x-icon lucide-x hover:scale-105 active:scale-95 mr-2 hover:text-red-600"
+      ><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg
+    >
+  </div>
+
+  <section class="md:h-[560px] h-[460px] overflow-y-scroll">
+    <ul class="" id="listProductos"></ul>
+    <CardList
+      nombre="Audifonos max trubo master max max"
+      descripcion="hola cmo es maria yo bien y ti la turbo master tuu ultra white te gusta bracking bad "
+      precio="12345"
+      codigo="1223"
+      imgProducto="/src/assets/nice.png"
+    />
+    <CardList
+      nombre="Audifonos mx trubo master max max"
+      descripcion="hola cm es maria yo bien y ti la turbo master tuu ultra white te gusta bracking bad "
+      precio="1345"
+      codigo="223"
+      imgProducto="/src/assets/nice.png"
+    />
+    <CardList
+      nombre="Audifonos mx trubo master max max"
+      descripcion="hola cm es maria yo bien y ti la turbo master tuu ultra white te gusta bracking bad "
+      precio="134w5"
+      codigo="223"
+      imgProducto="/src/assets/nice.png"
+    />
+    <CardList
+      nombre="Audifonoss mx trubo master max max"
+      descripcion="hola cm es maria yo bien y ti la turbo master tuu ultra white te gusta bracking bad "
+      precio="1345"
+      codigo="223"
+      imgProducto="/src/assets/nice.png"
+    />
+    <CardList
+      nombre="Audifonos mx trubo master max max"
+      descripcion="hola cm es mariwwa yo bien y ti la turbo master tuu ultra white te gusta bracking bad "
+      precio="1345"
+      codigo="223"
+      imgProducto="/src/assets/nice.png"
+    />
+    <CardList
+      nombre="Audifonos mx trubo master max max"
+      descripcion="hola cm es maria yo biewwn y ti la turbo master tuu ultra white te gusta bracking bad "
+      precio="1345"
+      codigo="223"
+      imgProducto="/src/assets/nice.png"
+    />
+    <CardList
+      nombre="Audifonos mx trubo master max max"
+      descripcion="hola cmssssa es maria yo bien y ti la turbo master tuu ultra white te gusta bracking bad "
+      precio="1345"
+      codigo="223"
+      imgProducto="/src/assets/nice.png"
+    />
+    <CardList
+      nombre="Audifonos mx trubo master max max"
+      descripcion="hola cm es mariaasa yo bien y ti la turbo master tuu ultra white te gusta bracking bad "
+      precio="1345"
+      codigo="223"
+      imgProducto="/src/assets/nice.png"
+    />
+    <CardList
+      nombre="Audifonos mx trubo master max max"
+      descripcion="holaasa cm es maria yo bien y ti la turbo master tuu ultra white te gusta bracking bad "
+      precio="1345"
+      codigo="223"
+      imgProducto="/src/assets/nice.png"
+    />
+  </section>
+
+  <section
+    class="bg-[#383a3b] w-[300px] h-[100px] text-white flex flex-col justify-center items-center"
+  >
+    <div class="flex justify-around mb-2 mt-2 w-full">
+      <p class="ml-2">Total</p>
+      <p class="mr-2">S/ <span>1234</span></p>
+    </div>
+    <Boton
+      text="Ir a pagar"
+      color="bg-amber-400"
+      hoverColor="hover:bg-amber-500"
+      tipo="button "
+    />
+  </section>
 </section>
+
+<style>
+  .overflow-y-scroll::-webkit-scrollbar {
+    display: none;
+  }
+</style>
