@@ -1,6 +1,7 @@
-
+---
 import "../styles/global.css";
 import "../script/main.js";
+import ModalCarrito from "../components/ModalCarrito.astro";
 ---
 
 <!doctype html>
@@ -13,8 +14,9 @@ import "../script/main.js";
     <title>Astro Basics</title>
   </head>
   <body
-    class="font-sans text-[1rem] dark:bg-[#272829] text-black dark:text-white"
+    class="font-sans text-[1rem] bg-plomo dark:bg-morado text-black dark:text-white"
   >
     <slot />
   </body>
+  <ModalCarrito />
 </html>

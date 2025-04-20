@@ -1,10 +1,11 @@
 ---
+import Filtro from "./Filtro.astro";
 import CardProducto from "./CardProducto.astro";
 ---
 
-<section class="grid grid-cols-1 md:grid-cols-4 mt-4">
+<section class="grid grid-cols-1 md:grid-cols-4 mt-4 place-items-center">
   <div
-    class="w-[320px] md:w-[576px] lg:w-[768px] xl:w-[950px] h-[40px] bg-gray-100 col-span-4 md:col-start-2 flex justify-between items-center"
+    class="w-[320px] md:w-[576px] lg:w-[768px] xl:w-[1100px] h-[40px] bg-white border-black border rounded-lg col-span-4 md:col-start-2 flex justify-between items-center"
   >
     <p class="text-black ml-2">5 de 15 resultados</p>
     <svg
@@ -27,8 +28,9 @@ import CardProducto from "./CardProducto.astro";
         d="M14 15h7"></path><path d="M14 20h7"></path></svg
     >
   </div>
+  <Filtro />
   <section
-    class="w-[320px] md:w-[576px] lg:w-[768px] xl:w-[950px] md:col-span-3 md:col-start-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 place-items-center mt-4"
+    class="w-[320px] md:w-[576px] lg:w-[768px] xl:w-[1100px] md:col-span-3 md:col-start-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 place-items-center mt-4 gap-4"
   >
     <CardProducto
       image="/src/assets/nice.png"

@@ -3,13 +3,14 @@ import Boton from "../components/Boton.astro";
 ---
 
 <div
-  class="bg-gray-100 dark:bg-[#4f6f9f] w-full h-full min-h-screen md:col-span-2 rounded-2xl border flex flex-col justify-center items-center"
+  class="bg-gray-100 dark:bg-[#272829] w-[320px] md:w-[450px] h-[600px] md:h-[500px] md:col-span-2 rounded-lg border flex flex-col justify-center items-center"
 >
-  <h2 class="text-[1.5rem] font-semibold my-2 mx-5 text-center">
+  <img class="w-[50px] dark:invert" src="./src/assets/logo.svg" alt="" />
+  <h2 class="text-[1.5rem] font-semibold my-2 mx-5 md:mx-10 text-center">
     Iniciar sesion o registrate para comprar
   </h2>
   <form action="" class="flex flex-col justify-center md:w-[420px]">
-    <fieldset class="grid grid-cols-1 md:grid-cols-2">
+    <fieldset class="grid grid-cols-1 md:grid-cols-2 ml-2">
       <legend class="">Información Personal</legend>
       <input
         class="rounded-sm text-black bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px] md:w-[190px]"
@@ -43,7 +44,7 @@ import Boton from "../components/Boton.astro";
     </fieldset>
 
     <select
-      class="border text-black w-[190px] text-[0.833rem] my-2 bg-white"
+      class="border ml-2 text-black w-[190px] text-[0.833rem] my-2 bg-white"
       name="document"
       id="documentRegistro"
     >
@@ -53,7 +54,7 @@ import Boton from "../components/Boton.astro";
       <option value="carnet_extrangeria">Carnet de extrangeria</option>
     </select>
 
-    <fieldset class="grid grid-cols-1 md:grid-cols-2">
+    <fieldset class="grid grid-cols-1 md:grid-cols-2 ml-2">
       <legend>Contraseña</legend>
       <input
         class="rounded-sm text-black bg-stone-50/100 p-1 my-2 border text-[0.833rem] w-[220px] md:w-[190px]"
@@ -73,8 +74,8 @@ import Boton from "../components/Boton.astro";
     </fieldset>
     <Boton
       text="Registrate"
-      color="bg-amber-400"
-      hover="hover:bg-amber-500"
+      color="bg-amarillo"
+      hover="hover:bg-dorado"
       tipo="submit"
     />
     <p class="text-[0.833rem] my-1 text-center">

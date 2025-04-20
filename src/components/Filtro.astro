@@ -1,0 +1,56 @@
+---
+import Boton from "./Boton.astro";
+---
+
+<section
+  class="border bg-plomo font-mono rounded-lg dark:bg-azulmarino [@media(max-width:426px)]:hidden place-self-start h-[500px] w-[180px] lg:w-[220px] xl:w-[320px] mx-auto"
+>
+  <header class="my-4 flex justify-center">
+    <h2 class="text-[1.625rem] font-semibold">Filtros</h2>
+  </header>
+  <form class="flex flex-col items-center gap-8 h-10/12">
+    <fieldset class="mx-10 flex flex-col text-[0.833rem]">
+      <legend class="text-[1.125rem]">Precio</legend>
+      <label for="min-price">Mínimo:</label>
+      <input
+        class="bg-white rounded-full border mb-4 pl-2 py-0.5"
+        type="number"
+        id="min-price"
+        name="min-price"
+        placeholder="0"
+      />
+
+      <label for="max-price">Máximo:</label>
+      <input
+        class="bg-white rounded-full border pl-2 py-0.5"
+        type="number"
+        id="max-price"
+        name="max-price"
+        placeholder="1000"
+      />
+    </fieldset>
+
+    <fieldset class="flex flex-col">
+      <legend class="text-[1.125rem]">Marca</legend>
+      <label>
+        <input type="checkbox" name="brand" value="Asus" />
+        Asus
+      </label>
+      <label>
+        <input type="checkbox" name="brand" value="Motorola" />
+        Motorola
+      </label>
+      <label>
+        <input type="checkbox" name="brand" value="Sony" />
+        Sony
+      </label>
+    </fieldset>
+    <Boton
+      text="Aplicar"
+      color="bg-amarillo"
+      hoverColor="hover:bg-dorado"
+      tipo="button"
+      clasAdd="mt-auto"
+    />
+  </form>
+</section>

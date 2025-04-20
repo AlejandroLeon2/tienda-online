@@ -14,11 +14,14 @@ const {
 ---
 
 <section
-  class="bg-gray-100 dark:bg-gray-500 shadow-xl shadow-white/20 border flex flex-col justify-center rounded-2xl w-[320px] h-[358px]"
+  class="bg-white dark:bg-gray-500 shadow-xl shadow-black/40 dark:shadow-white/40 border flex flex-col justify-center rounded-lg w-[320px] h-[358px]"
 >
   <div class="flex justify-around my-2">
-    <h4>{categoria}</h4>
-    <a class="hover:underline" href="#">Ver todo</a>
+    <h4 class="font-semibold text-[1.125rem]">{categoria}</h4>
+    <a
+      class="hover:scale-105 active:scale-95 border-azul border-2 text-azul px-1"
+      href="#">Ver todo</a
+    >
   </div>
   <img class="" src={fotoBanner} alt="Banner Publicitario" />
   <section class="grid grid-cols-4 place-items-center">

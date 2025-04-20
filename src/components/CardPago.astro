@@ -1,0 +1,44 @@
+---
+import Boton from "./Boton.astro";
+import PagoList from "./PagoList.astro";
+---
+
+<section
+  class="flex [@media(max-width:426px)]:items-center [@media(max-width:426px)]:flex-col-reverse gap-4 md:gap-8 justify-center"
+>
+  <section class="my-6 md:w-[445px] md:col-span-2 col-span-3">
+    <h2 class="text-xl font-semibold mb-4">Tu carrito</h2>
+    <ul
+      class="md:h-auto rounded-lg bg-plomo h-[485px] flex flex-col overflow-y-scroll"
+    >
+      <PagoList
+        nombre="Audifonos max trubo master max max"
+        descripcion="hola cmo es maria yo bien y ti la turbo master tuu ultra white te gusta bracking bad "
+        precio="12345"
+        codigo="1223"
+        imgProducto="/src/assets/nice.png"
+      />
+      <PagoList
+        nombre="Audifonos mx trubo master max max"
+        descripcion="hola cm es maria yo bien y ti la turbo master tuu ultra white te gusta bracking bad "
+        precio="15"
+        codigo="223"
+        imgProducto="/src/assets/nice.png"
+      />
+    </ul>
+  </section>
+
+  <div
+    class="bg-azulmarino font-mono w-[300px] md:w-[200px] h-[120px] rounded-lg shadow-white/30 md:col-span-2 gap-2 dark:bg-gray-800 flex flex-col mt-7 justify-center shadow-lg"
+  >
+    <h2 class="text-xl text-white  ml-4">Total</h2>
+    <p class="text-lg  mx-auto w-[60px] text-amarillo">S/ 12</p>
+    <Boton
+      text="Pagar"
+      color="bg-green-600"
+      hover="hover:bg-green-700"
+      tipo="submit"
+      clasAdd="text-white"
+    />
+  </div>
+</section>
