@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+    --color-dorado: #FB8500;
+    --color-amarillo: #FFB703;
+    --color-azulmarino: #023047;
+    --color-azul: #219EBC;
+    --color-celeste: #8ECAE6;
+    --color-plomo:#F7F7F8;
+    --color-morado:#161032;
+}

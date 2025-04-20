@@ -3,18 +3,18 @@ const { nombre, descripcion, precio, codigo, imgProducto } = Astro.props;
 ---
 
 <li
-  class="producto-carrito rounded  border border-black dark:border-white mr-1 my-1 bg-white dark:bg-azulmarino w-[280px] h-[90px] grid grid-cols-3"
+  class="rounded border border-black dark:border-white mx-1 my-1 bg-white dark:bg-[#272829] w-[280px] md:w-[420px] h-[90px] grid grid-cols-3 md:grid-cols-4"
   data-codigo={codigo}
 >
   <img
-    class="rounded-l col-span-1 w-full h-auto overflow-hidden"
+    class="rounded-l col-span-1 w-auto h-full overflow-hidden"
     src={imgProducto}
     alt={nombre}
   />
-  <section class="col-span-2 mt-1">
+  <section class="col-span-2 md:col-span-3 mt-1">
     <div class="flex justify-around">
       <h4
-        class="text-[0.833rem] font-semibold text-dorado w-[180px] leading-[13px] overflow-hidden ml-2"
+        class="text-[0.833rem] w-[180px] md:w-[250px] leading-[13px] overflow-hidden ml-2"
       >
         {nombre}
       </h4>
@@ -39,17 +39,17 @@ const { nombre, descripcion, precio, codigo, imgProducto } = Astro.props;
       >
     </div>
     <p
-      class="ml-2 overflow-hidden text-[0.694rem] w-[150px] h-[25px] leading-[13px] text-gray-600 dark:text-white"
+      class="ml-2 overflow-hidden text-[0.694rem] w-[150px] md:w-[250px] h-[25px] leading-[13px] text-gray-600 dark:text-gray-400"
     >
       {descripcion}
     </p>
     <div
-      class="flex items-center justify-around h-[20px] mt-1.5 text-[0.833rem]"
+      class="flex items-center md:grid md:grid-cols-2 md:w-[310px] justify-around h-[20px] mt-1.5 text-[0.833rem]"
     >
-      <p class="text-red-600 font-bold text-[0.833rem]">
+      <p class="text-red-600 ml-4 font-bold text-[0.833rem]">
         S/ <span>{precio}</span>
       </p>
-      <div class="w-[66px] flex items-center">
+      <div class="w-[66px] flex items-center ">
         <button
           type="button"
           aria-label="Aumentar cantidad"

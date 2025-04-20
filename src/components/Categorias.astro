@@ -1,0 +1,85 @@
+---
+import Filtro from "./Filtro.astro";
+import CardProducto from "./CardProducto.astro";
+---
+
+<section class="grid grid-cols-1 md:grid-cols-4 mt-4 place-items-center">
+  <div
+    class="w-[320px] md:w-[576px] lg:w-[768px] xl:w-[1100px] h-[40px] bg-white border-black border rounded-lg col-span-4 md:col-start-2 flex justify-between items-center"
+  >
+    <p class="text-black ml-2">5 de 15 resultados</p>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide mr-2 text-black lucide-layout-list-icon lucide-layout-list"
+      ><rect width="7" height="7" x="3" y="3" rx="1"></rect><rect
+        width="7"
+        height="7"
+        x="3"
+        y="14"
+        rx="1"></rect><path d="M14 4h7"></path><path d="M14 9h7"></path><path
+        d="M14 15h7"></path><path d="M14 20h7"></path></svg
+    >
+  </div>
+  <Filtro />
+  <section
+    class="w-[320px] md:w-[576px] lg:w-[768px] xl:w-[1100px] md:col-span-3 md:col-start-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 place-items-center mt-4 gap-4"
+  >
+    <CardProducto
+      image="/src/assets/nice.png"
+      marca="Asus"
+      titulo="Ventilador de Pie 3 en 1 - 16"
+      precio="200"
+      codigo="500"
+    />
+    <CardProducto
+      image="/src/assets/nice.png"
+      marca="Asus"
+      titulo="Ventilador de Pie 3 ens 1 - 16"
+      precio="200"
+      codigo="500"
+    />
+    <CardProducto
+      image="/src/assets/nice.png"
+      marca="Asus"
+      titulo="Ventilaadosdr de Pie 3 en 1 - 16"
+      precio="200"
+      codigo="500"
+    />
+    <CardProducto
+      image="/src/assets/nice.png"
+      marca="Asus"
+      titulo="Ventilaaaadsasdor de Pie 3 ens 1 - 16"
+      precio="200"
+      codigo="500"
+    />
+    <CardProducto
+      image="/src/assets/nice.png"
+      marca="Asus"
+      titulo="Ventilassssador de Pie 3 ens 1 - 16"
+      precio="200"
+      codigo="500"
+    />
+    <CardProducto
+      image="/src/assets/nice.png"
+      marca="Asus"
+      titulo="Ventilaassdosdr de Pie 3 en 1 - 16"
+      precio="200"
+      codigo="500"
+    />
+    <CardProducto
+      image="/src/assets/nice.png"
+      marca="Asus"
+      titulo="Ventsilaaaadsdor de Pie 3 ens 1 - 16"
+      precio="200"
+      codigo="500"
+    />
+  </section>
+</section>
