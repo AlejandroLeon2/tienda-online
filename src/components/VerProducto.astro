@@ -1,4 +1,5 @@
 ---
+
 import audifonos from "../assets/audifonos.jpg";
 ---
 
@@ -147,3 +148,30 @@ import audifonos from "../assets/audifonos.jpg";
     </div>
   </div>
 </div>
+
+
+
+  
+  <script>
+    const mainImage = document.getElementById('mainImage');
+    const thumbnails = document.querySelectorAll('.thumbnail');
+  
+    thumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', () => {
+        // Transición de opacidad suave
+        mainImage.classList.add('opacity-0');
+  
+        setTimeout(() => {
+          mainImage.src = thumbnail.src;
+          mainImage.classList.remove('opacity-0');
+        }, 200);
+  
+        // Quitar sombra de todas
+        thumbnails.forEach(t => t.classList.remove('ring-4', 'ring-yellow-300', 'ring-offset-2'));
+        
+        // Añadir sombra a la miniatura seleccionada
+        thumbnail.classList.add('ring-4', 'ring-yellow-300', 'ring-offset-2');
+      });
+    });
+  </script>
+
