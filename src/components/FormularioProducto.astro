@@ -1,0 +1,54 @@
+<!-- Formulario para ingreso de productos estilo oscuro -->
+<form class="w-full max-w-xl mx-auto mt-10 p-8 bg-[#1f1f1f] text-white rounded-lg shadow-lg border border-gray-600" action="/productos" method="POST" enctype="multipart/form-data">
+    <h2 class="text-2xl font-bold text-center mb-6">Agrega un nuevo producto</h2>
+  
+    <div class="mb-4">
+      <label class="block text-sm font-semibold mb-2" for="nombre_producto">
+        Nombre del producto
+      </label>
+      <input class="w-full bg-gray-200 text-gray-900 border border-gray-300 rounded py-2 px-3 focus:outline-none focus:ring-2 focus:ring-yellow-500" 
+             id="nombre_producto" type="text" placeholder="Nombre del producto" name="nombre_producto" required />
+    </div>
+  
+    <div class="flex flex-col md:flex-row gap-4 mb-4">
+      <div class="w-full">
+        <label class="block text-sm font-semibold mb-2" for="marca_producto">
+          Marca del producto
+        </label>
+        <input class="w-full bg-gray-200 text-gray-900 border border-gray-300 rounded py-2 px-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+               id="marca_producto" type="text" placeholder="Marca del producto" name="marca_producto" required />
+      </div>
+  
+      <div class="w-full">
+        <label class="block text-sm font-semibold mb-2" for="precio_producto">
+          Precio
+        </label>
+        <input class="w-full bg-gray-200 text-gray-900 border border-gray-300 rounded py-2 px-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+               id="precio_producto" type="number" placeholder="Precio" name="precio_producto" required />
+      </div>
+    </div>
+  
+    <div class="mb-4">
+      <label class="block text-sm font-semibold mb-2" for="descripcion_producto">
+        Descripción
+      </label>
+      <textarea class="w-full bg-gray-200 text-gray-900 border border-gray-300 rounded py-2 px-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                id="descripcion_producto" placeholder="Descripción del producto" name="descripcion_producto" required></textarea>
+      <p class="text-gray-400 text-xs italic mt-1">Escribe una breve descripción del producto.</p>
+    </div>
+  
+    <div class="mb-6">
+      <label class="block text-sm font-semibold mb-2" for="imagen_producto">
+        Imagen del producto
+      </label>
+      <input class="w-full bg-gray-200 text-gray-900 border border-gray-300 rounded py-2 px-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+             id="imagen_producto" type="file" name="imagen_producto" required />
+    </div>
+  
+    <div class="flex justify-center">
+      <button class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded focus:outline-none focus:ring-2 focus:ring-yellow-500">
+        Agregar producto
+      </button>
+    </div>
+  </form>
+  
