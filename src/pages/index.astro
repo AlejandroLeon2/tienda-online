@@ -4,12 +4,15 @@ import VerProducto from "../components/VerProducto.astro";
 import Categorias from "../components/Categorias.astro";
 import CardCatgoria from "../components/CardCatgoria.astro";
 import CardPago from "../components/CardPago.astro";
-
+import Aside from "../components/Aside.astro";
+import FormularioProducto from "../components/FormularioProducto.astro";
+import Productos from "../components/Productos.astro";
 ---
 
 <Layout>
   <Categorias />
   <VerProducto />
+
   <CardCatgoria
     categoria="Audifonos"
     fotoBanner="/src/assets/bannerAudifonos.webp"
@@ -22,6 +25,16 @@ import CardPago from "../components/CardPago.astro";
     text3="True Wireless"
     text4="Anulacion de ruido"
   />
+
+  <aside>
+    <Aside />
+  </aside>
+  <section>
+    <Productos />
+
+  </section>
+  <FormularioProducto />
+
   <section>
     <CardPago />
   </section>
