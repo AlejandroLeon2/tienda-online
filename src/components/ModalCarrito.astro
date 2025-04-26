@@ -3,7 +3,7 @@ import CardList from "./CardList.astro";
 import Boton from "./Boton.astro";
 ---
 
-<section class="bg-amarillo hidden w-[300px] border flex fixed top-0 right-0 flex-col">
+<div class="bg-amarillo w-[300px] border flex fixed top-0 right-0 flex-col">
   <div class="flex justify-between items-center w-full">
     <img class="w-[50px] dark: invert" src="./src/assets/logo.svg" alt="" />
     <h3 class="text-left text-[1.5rem] font-bold">Tu carrito</h3>
@@ -105,7 +105,8 @@ import Boton from "./Boton.astro";
       tipo="button "
     />
   </section>
-</section>
+</div>
+
 
 <style>
   .overflow-y-scroll::-webkit-scrollbar {
