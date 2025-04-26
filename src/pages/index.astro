@@ -1,40 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import VerProducto from "../components/VerProducto.astro";
-import LoginForm from "../components/LoginForm.astro";
-import RegisterForm from "../components/RegisterForm.astro";
-import Footer from "../components/Footer.astro";
 import Categorias from "../components/Categorias.astro";
-import Header from "../components/Header.astro";
 import CardCatgoria from "../components/CardCatgoria.astro";
 import CardPago from "../components/CardPago.astro";
+
 ---
 
 <Layout>
-  <Header />
   <Categorias />
-
   <VerProducto />
-
-  <section class="min-h-screen" id="cardCategoria">
-    <CardCatgoria
-      categoria="Audifonos"
-      fotoBanner="/src/assets/bannerAudifonos.webp"
-      foto1="/src/assets/nice.png"
-      foto2="/src/assets/nice.png"
-      foto3="/src/assets/nice.png"
-      foto4="/src/assets/nice.png"
-      text1="On Ear"
-      text2="In Ear"
-      text3="True Wireless"
-      text4="Anulacion de ruido"
-    />
-  </section>
+  <CardCatgoria
+    categoria="Audifonos"
+    fotoBanner="/src/assets/bannerAudifonos.webp"
+    foto1="/src/assets/nice.png"
+    foto2="/src/assets/nice.png"
+    foto3="/src/assets/nice.png"
+    foto4="/src/assets/nice.png"
+    text1="On Ear"
+    text2="In Ear"
+    text3="True Wireless"
+    text4="Anulacion de ruido"
+  />
   <section>
     <CardPago />
   </section>
-  <LoginForm />
-
-  <RegisterForm />
-  <Footer />
 </Layout>
