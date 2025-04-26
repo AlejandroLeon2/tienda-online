@@ -1,6 +1,11 @@
 ---
 import "../styles/global.css";
 import "../script/main.js";
+
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import LoginForm from "../components/LoginForm.astro";
+import RegisterForm from "../components/RegisterForm.astro";
 import ModalCarrito from "../components/ModalCarrito.astro";
 ---
 
@@ -16,7 +21,50 @@ import ModalCarrito from "../components/ModalCarrito.astro";
   <body
     class="font-sans text-[1rem] bg-plomo dark:bg-morado text-black dark:text-white"
   >
+    <Header />
     <slot />
+    <Footer />
+
+    <section
+      id="modalCarrito"
+      class="bg-black/50 hidden h-screen w-screen fixed top-0 right-0"
+    >
+      <ModalCarrito client:load />
+    </section>
+    <script>
+      document.getElementById("carrito")?.addEventListener("click", (event) => {
+        const modalCarrito = document.getElementById("modalCarrito");
+        modalCarrito?.classList.toggle("hidden");
+      });
+      document.getElementById("modalCarrito")?.addEventListener("click", (event) => {
+        if (event.target === event.currentTarget) {
+          const modalCarrito = document.getElementById("modalCarrito");
+          modalCarrito?.classList.add("hidden");
+        }
+      });
+    </script>
+
+    <section
+      id="modalLogin"
+      class="bg-black/50 hidden h-screen w-screen fixed top-0 right-0"
+    >
+      <LoginForm client:load />
+    </section>
+    <script>
+      document.getElementById("login")?.addEventListener("click", (event) => {
+        const modalCarrito = document.getElementById("modalLogin");
+        modalCarrito?.classList.toggle("hidden");
+      });
+      document.getElementById("modalLogin")?.addEventListener("click", (event) => {
+        if (event.target === event.currentTarget) {
+          const modalCarrito = document.getElementById("modalLogin");
+          modalCarrito?.classList.add("hidden");
+        }
+      });
+    </script>
+
+    <section class="bg-black/50 hidden h-screen w-screen fixed top-0 right-0">
+      <RegisterForm />
+    </section>
   </body>
-  <ModalCarrito />
 </html>
