@@ -1,7 +1,5 @@
 ---
 import "../styles/global.css";
-import "../script/main.js";
-
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import LoginForm from "../components/LoginForm.astro";
@@ -22,6 +20,25 @@ import ModalCarrito from "../components/ModalCarrito.astro";
     class="font-sans text-[1rem] bg-plomo dark:bg-morado text-black dark:text-white"
   >
     <Header />
+    <script is:inline>
+      document
+        .getElementById("search-input")
+        .addEventListener("input", function (event) {
+          const palabra = event.target.value.toLowerCase();
+          const productos = document.querySelectorAll(".cardProducto");
+
+          productos.forEach((producto) => {
+            const nombreProducto = producto
+              .getAttribute("data-nombre")
+              .toLowerCase();
+            if (nombreProducto.includes(palabra)) {
+              producto.classList.remove("hidden");
+            } else {
+              producto.classList.add("hidden");
+            }
+          });
+        });
+    </script>
     <slot />
     <Footer />
 
@@ -32,15 +49,22 @@ import ModalCarrito from "../components/ModalCarrito.astro";
       <ModalCarrito client:load />
     </section>
     <script>
-      document.getElementById("carrito")?.addEventListener("click", (event) => {
+      //modal carrito
+      document.getElementById("carrito")?.addEventListener("click", () => {
         const modalCarrito = document.getElementById("modalCarrito");
         modalCarrito?.classList.toggle("hidden");
       });
-      document.getElementById("modalCarrito")?.addEventListener("click", (event) => {
-        if (event.target === event.currentTarget) {
-          const modalCarrito = document.getElementById("modalCarrito");
-          modalCarrito?.classList.add("hidden");
-        }
+      document
+        .getElementById("modalCarrito")
+        ?.addEventListener("click", (event) => {
+          if (event.target === event.currentTarget) {
+            const modalCarrito = document.getElementById("modalCarrito");
+            modalCarrito?.classList.add("hidden");
+          }
+        });
+      document.getElementById("xcarrito")?.addEventListener("click", () => {
+        const modalCarrito = document.getElementById("modalCarrito");
+        modalCarrito?.classList.add("hidden");
       });
     </script>
 
@@ -51,20 +75,49 @@ import ModalCarrito from "../components/ModalCarrito.astro";
       <LoginForm client:load />
     </section>
     <script>
-      document.getElementById("login")?.addEventListener("click", (event) => {
+      //Login modal
+      document.getElementById("login")?.addEventListener("click", () => {
         const modalCarrito = document.getElementById("modalLogin");
         modalCarrito?.classList.toggle("hidden");
       });
-      document.getElementById("modalLogin")?.addEventListener("click", (event) => {
-        if (event.target === event.currentTarget) {
-          const modalCarrito = document.getElementById("modalLogin");
-          modalCarrito?.classList.add("hidden");
-        }
-      });
+      document
+        .getElementById("modalLogin")
+        ?.addEventListener("click", (event) => {
+          if (event.target === event.currentTarget) {
+            const modalCarrito = document.getElementById("modalLogin");
+            modalCarrito?.classList.add("hidden");
+          }
+        });
     </script>
 
-    <section class="bg-black/50 hidden h-screen w-screen fixed top-0 right-0">
+    <section
+      id="modalRegister"
+      class="bg-black/50 hidden h-screen w-screen fixed top-0 right-0"
+    >
       <RegisterForm />
     </section>
+    <script>
+      //register modal
+      document
+        .getElementById("linkRegistrate")
+        ?.addEventListener("click", () => {
+          document.getElementById("modalRegister")?.classList.toggle("hidden");
+          const modalCarrito = document.getElementById("modalLogin");
+          modalCarrito?.classList.add("hidden");
+        });
+      document.getElementById("linkLogin")?.addEventListener("click", () => {
+        document.getElementById("modalRegister")?.classList.toggle("hidden");
+        const modalLogin = document.getElementById("modalLogin");
+        modalLogin?.classList.remove("hidden");
+      });
+      document
+        .getElementById("modalRegister")
+        ?.addEventListener("click", (event) => {
+          if (event.target === event.currentTarget) {
+            const modalRegister = document.getElementById("modalRegister");
+            modalRegister?.classList.add("hidden");
+          }
+        });
+    </script>
   </body>
 </html>

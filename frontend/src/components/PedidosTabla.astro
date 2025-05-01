@@ -1,0 +1,46 @@
+---
+import { getPedidos } from "../services/api";
+
+const pedidos = await getPedidos();
+---
+
+<body class="text-gray-800 p-8">
+  <h2 class="text-3xl font-bold mb-6 text-center">Lista de Pedidos</h2>
+
+  <div class="overflow-x-auto px-8">
+    <table class="min-w-full bg-white">
+      <thead>
+        <tr class="bg-gray-200 text-gray-700 uppercase text-sm">
+          <th class="py-3 px-6 text-left">ID Pedido</th>
+          <th class="py-3 px-6 text-left">ID Cliente</th>
+          <th class="py-3 px-6 text-left">ID Producto</th>
+          <th class="py-3 px-6 text-left">Cantidad</th>
+          <th class="py-3 px-6 text-left">Precio Unidad</th>
+          <th class="py-3 px-6 text-left">Total</th>
+          <th class="py-3 px-6 text-left">Fecha Creación</th>
+          <th class="py-3 px-6 text-left">Última Actualización</th>
+          <th class="py-3 px-6 text-left">Creado por</th>
+          <th class="py-3 px-6 text-left">Modificado por</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-600 text-sm font-light">
+        {
+          pedidos.map((pedido) => (
+            <tr class="border-b border-gray-200 hover:bg-gray-100">
+              <td class="py-3 px-6 text-left">{pedido.id_dpe}</td>
+              <td class="py-3 px-6 text-left">{pedido.id_pe}</td>
+              <td class="py-3 px-6 text-left">{pedido.id_pr}</td>
+              <td class="py-3 px-6 text-left">{pedido.cantidad_rpe}</td>
+              <td class="py-3 px-6 text-left">S/.{pedido.precio_unidad_pr}</td>
+              <td class="py-3 px-6 text-left">S/.{pedido.total_dpe}</td>
+              <td class="py-3 px-6 text-left">{pedido.created_at}</td>
+              <td class="py-3 px-6 text-left">{pedido.updated_at}</td>
+              <td class="py-3 px-6 text-left">{pedido.created_by}</td>
+              <td class="py-3 px-6 text-left">{pedido.updated_by}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</body>

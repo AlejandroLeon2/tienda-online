@@ -1,0 +1,46 @@
+---
+import Auth from "../services/api";
+
+const usuarios = await Auth.getUsers();
+---
+
+<body class="text-gray-800">
+  <h2 class="text-3xl font-bold my-10 text-center">Lista de Usuarios</h2>
+
+  <div class="overflow-x-auto px-8">
+    <table class="min-w-full bg-white">
+      <thead>
+        <tr class="bg-gray-200 text-gray-700 uppercase text-sm">
+          <th class="py-3 px-6 text-left">ID</th>
+          <th class="py-3 px-6 text-left">Correo</th>
+          <th class="py-3 px-6 text-left">Nombre</th>
+          <th class="py-3 px-6 text-left">Apellido</th>
+          <th class="py-3 px-6 text-left">Teléfono</th>
+          <th class="py-3 px-6 text-left">Documento</th>
+          <th class="py-3 px-6 text-left">Estado</th>
+          <th class="py-3 px-6 text-left">Admin</th>
+          <th class="py-3 px-6 text-left">Fecha de Creación</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-600 text-sm font-light">
+        {
+          usuarios.map((usuario) => (
+            <tr class="border-b border-gray-200 hover:bg-gray-100">
+              <td class="py-3 px-6 text-left">{usuario.id_us}</td>
+              <td class="py-3 px-6 text-left">{usuario.correo_us}</td>
+              <td class="py-3 px-6 text-left">{usuario.nombre_us}</td>
+              <td class="py-3 px-6 text-left">{usuario.apellido_us}</td>
+              <td class="py-3 px-6 text-left">{usuario.ntelefono_us}</td>
+              <td class="py-3 px-6 text-left">{usuario.tdocumento_us}</td>
+              <td class="py-3 px-6 text-left">{usuario.estado_us}</td>
+              <td class="py-3 px-6 text-left">
+                {usuario.admin_us ? "Sí" : "No"}
+              </td>
+              <td class="py-3 px-6 text-left">{usuario.created_at}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</body>

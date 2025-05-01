@@ -2,16 +2,17 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const userRoutes = require('./routes/authRoutes');
-const userModel = require('./models/User'); // Asegúrate de importar el modelo correcto
+const userModel = require('./models/User');
 
 const app = express();
 
 app.use(cors({
   origin: 'http://localhost:4321',
+  credentials: true // Agregar esto
 }));
 
 app.use(express.json());
-
+app.use(express.urlencoded({ extended: true })); // Agregar esta línea
 app.use('/api', userRoutes);
 
 app.get('/', async (req, res) => {

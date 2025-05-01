@@ -1,18 +1,23 @@
 ---
 import Boton from "../components/Boton.astro";
-const { image, marca, titulo, precio, codigo } = Astro.props;
+const { image, tipo, marca, titulo, precio, id } = Astro.props;
+const imagenSrc = image ? `data:${tipo};base64,${image}` : "/placeholder.jpg";
 ---
 
 <div
-  class="w-[150px] md:w-[180px] h-[250px] md:h-[292px] xl:h-[300px] xl:w-[200px] my-1 bg-white dark:bg-gray-400 shadow-xl hover:shadow-black/20 hover:dark:shadow-white/30 border-2 dark:border-white rounded flex flex-col justify-center items-center hover:scale-105"
+  data-nombre={titulo}
+  class="cardProducto w-[150px] md:w-[180px] h-[250px] md:h-[292px] xl:h-[300px] xl:w-[200px] my-1 bg-white dark:bg-gray-400 shadow-xl hover:shadow-black/20 hover:dark:shadow-white/30 border-2 dark:border-white rounded flex flex-col justify-center items-center hover:scale-105"
 >
-  <img
-    class="w-full h-[136px] md:h-[180px] xl:h-[190px] overflow-hidden border-t"
-    src={image}
-    alt={titulo}
-  />
+  <a href={`/producto/${id}`}>
+    <img
+      class="imagen w-full h-[136px] md:h-[180px] xl:h-[190px] overflow-hidden border-t"
+      src={imagenSrc}
+      alt={titulo}
+    />
+  </a>
+
   <p
-    class="mr-[100px] md:mr-[125px] font-semibold text-blue-700 h-[16px] text-[0.833rem] my-1"
+    class="mr-auto ml-2 w-30 overflow-hidden font-semibold text-blue-700 h-[16px] text-[0.833rem] my-1"
   >
     {marca}
   </p>
@@ -22,7 +27,7 @@ const { image, marca, titulo, precio, codigo } = Astro.props;
     {titulo}
   </h4>
   <p class="h-[13px] my-1 font-bold text-red-700 text-[0.833rem]">
-    S/ <span>{precio}</span>
+    S/ {precio}
   </p>
   <Boton
     text="Agregar al carrito"
@@ -30,6 +35,6 @@ const { image, marca, titulo, precio, codigo } = Astro.props;
     hoverColor="hover:bg-dorado"
     tipo="button"
     clasAdd="añadir-Carrito"
-    codigo={codigo}
+    codigo={id}
   />
 </div>

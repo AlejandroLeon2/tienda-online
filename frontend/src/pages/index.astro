@@ -1,41 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import VerProducto from "../components/VerProducto.astro";
 import Categorias from "../components/Categorias.astro";
-import CardCatgoria from "../components/CardCatgoria.astro";
-import CardPago from "../components/CardPago.astro";
-import Aside from "../components/Aside.astro";
-import FormularioProducto from "../components/FormularioProducto.astro";
-import Productos from "../components/Productos.astro";
 ---
-
 <Layout>
   <Categorias />
-  <VerProducto />
+  
 
-  <CardCatgoria
-    categoria="Audifonos"
-    fotoBanner="/src/assets/bannerAudifonos.webp"
-    foto1="/src/assets/nice.png"
-    foto2="/src/assets/nice.png"
-    foto3="/src/assets/nice.png"
-    foto4="/src/assets/nice.png"
-    text1="On Ear"
-    text2="In Ear"
-    text3="True Wireless"
-    text4="Anulacion de ruido"
-  />
+  <script is:inline>
+    document
+      .getElementById("contenCategoria")
+      ?.addEventListener("click", (event) => {
+        if (event.target.matches(".imagen")) {
+          const codigo = event.target.dataset.codigo;
+          console.log("Código seleccionado:", codigo);
 
-  <aside>
-    <Aside />
-  </aside>
-  <section>
-    <Productos />
-
-  </section>
-  <FormularioProducto />
-
-  <section>
-    <CardPago />
-  </section>
+          document.getElementById("verProductos").innerHTML =
+            `<p>Producto con código: ${codigo}</p>`;
+        }
+      });
+  </script>
 </Layout>

@@ -1,5 +1,6 @@
 ---
 import Boton from "./Boton.astro";
+const { filtro } = Astro.props;
 ---
 
 <section
@@ -32,18 +33,14 @@ import Boton from "./Boton.astro";
 
     <fieldset class="flex flex-col">
       <legend class="text-[1.125rem]">Marca</legend>
-      <label>
-        <input type="checkbox" name="brand" value="Asus" />
-        Asus
-      </label>
-      <label>
-        <input type="checkbox" name="brand" value="Motorola" />
-        Motorola
-      </label>
-      <label>
-        <input type="checkbox" name="brand" value="Sony" />
-        Sony
-      </label>
+      {
+        filtro.map((item) => (
+          <label data-codigo={item.value}>
+            <input type="checkbox" name="brand" value={item.marca_pr} />
+            {item.marca_pr}
+          </label>
+        ))
+      }
     </fieldset>
     <Boton
       text="Aplicar"

@@ -1,0 +1,42 @@
+---
+import { Product } from "../services/api";
+
+const productos = await Product.getProductos();
+
+---
+
+<body class="text-gray-800 ">
+  <h2 class="text-3xl font-bold my-10 text-center">Inventario de Productos</h2>
+
+  <div class="overflow-x-auto px-8">
+    <table class="min-w-full bg-white">
+      <thead>
+        <tr class="bg-gray-200 text-gray-700 uppercase text-sm">
+          <th class="py-3 px-6 text-left">ID</th>
+          <th class="py-3 px-6 text-left">Nombre</th>
+          <th class="py-3 px-6 text-left">Marca</th>
+          <th class="py-3 px-6 text-left">Precio</th>
+          <th class="py-3 px-6 text-left">Descripción</th>
+          <th class="py-3 px-6 text-left">Fecha</th>
+          <th class="py-3 px-6 text-left">Usuario</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-600 text-sm font-light">
+        {
+          
+          productos.map((producto) => (
+            <tr class="border-b border-gray-200 hover:bg-gray-100">
+              <td class="py-3 px-6 text-left">{producto.id_pr}</td>
+              <td class="py-3 px-6 text-left">{producto.nombre_pr}</td>
+              <td class="py-3 px-6 text-left">{producto.marca_pr}</td>
+              <td class="py-3 px-6 text-left">S/.{producto.precio_pr}</td>
+              <td class="py-3 px-6 text-left">{producto.descripcion_pr}</td>
+              <td class="py-3 px-6 text-left">{producto.created_at}</td>
+              <td class="py-3 px-6 text-left">{producto.created_by}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</body>

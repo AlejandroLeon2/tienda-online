@@ -1,15 +1,16 @@
 ---
 import Boton from "../components/Boton.astro";
+import { Auth } from "../services/api";
 ---
 
 <div
-  class="bg-gray-100  dark:bg-[#272829] w-[320px] md:w-[450px] h-[600px] md:h-[500px] md:col-span-2 rounded-lg border flex flex-col justify-center items-center"
+  class="bg-gray-100 fixed top-14 right-40 dark:bg-[#272829] w-[320px] md:w-[450px] h-[600px] md:h-[500px] md:col-span-2 rounded-lg border flex flex-col justify-center items-center"
 >
   <img class="w-[50px] dark:invert" src="./src/assets/logo.svg" alt="" />
   <h2 class="text-[1.5rem] font-semibold my-2 mx-5 md:mx-10 text-center">
     Iniciar sesion o registrate para comprar
   </h2>
-  <form action="" class="flex flex-col justify-center md:w-[420px]">
+  <form class="flex flex-col justify-center md:w-[420px]">
     <fieldset class="grid grid-cols-1 md:grid-cols-2 ml-2">
       <legend class="">Información Personal</legend>
       <input
@@ -79,7 +80,54 @@ import Boton from "../components/Boton.astro";
       tipo="submit"
     />
     <p class="text-[0.833rem] my-1 text-center">
-      ¿Ya tienes cuenta? <a class="underline" href="#">Inicia sesion</a>
+      ¿Ya tienes cuenta? <a class="underline" id="linkLogin" href="#"
+        >Inicia sesion</a
+      >
     </p>
   </form>
 </div>
+
+<script is:inline>
+  document
+    .getElementById("registroForm")
+    ?.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const form = event.target;
+      const formData = new FormData(form);
+      const submitButton = form.querySelector('button[type="submit"]');
+
+      try {
+        submitButton.disabled = true;
+        submitButton.innerHTML = `Registrando...`;
+
+        // Construcción de objeto para enviar al backend
+        const userData = {
+          nombre: document.getElementById("nameRegister").value,
+          apellido: document.getElementById("apellidoRegister").value,
+          email: document.getElementById("emailRegister").value,
+          telefono: document.getElementById("numberRegister").value,
+          tipoDocumento: document.getElementById("documentRegistro").value,
+          password: document.getElementById("passwordRegister").value,
+        };
+
+        const response = await fetch("http://localhost:3000/api/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(userData),
+        });
+
+        if (!response.ok) {
+          const error = await response.json();
+          throw new Error(error.error);
+        }
+
+        window.location.href = "/login";
+      } catch (error) {
+        alert(`Error: ${error.message}`);
+      } finally {
+        submitButton.disabled = false;
+        submitButton.innerHTML = "Registrar usuario";
+      }
+    });
+</script>

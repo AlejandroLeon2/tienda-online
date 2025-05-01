@@ -32,6 +32,9 @@ import Boton from "../components/Boton.astro";
       maxlength="45"
       required
     />
+    <a href="http://localhost:4321/dashoard">
+      dashoard
+    </a>
     <Boton
       text="Ingresar"
       color="bg-amber-400"
@@ -39,7 +42,11 @@ import Boton from "../components/Boton.astro";
       tipo="submit"
     />
     <p class="text-[0.833rem] my-1">
-      ¿Aun no tienes cuenta? <a class="underline" href="#">Registrarte</a>
+      ¿Aun no tienes cuenta? <a
+        class="underline hover:text-dorado"
+        id="linkRegistrate"
+        href="#">Registrarte</a
+      >
     </p>
   </form>
 </div>
